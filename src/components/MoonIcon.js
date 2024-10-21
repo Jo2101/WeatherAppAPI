@@ -7,8 +7,8 @@ const MoonIcon = () => {
     <img
       src={data.icon == "moonLogo" ? moonLogo : sunLogo}
       style={{
-        width: "100px",
-        height: "100px",
+        width: "6.25rem",
+        height: "6.25rem",
       }}
     />
   );

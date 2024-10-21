@@ -6,7 +6,7 @@ const SunIcon = () => {
   return (
     <img
       src={data.icon == "sunLogo" ? sunLogo : moonLogo}
-      style={{ width: "100px", height: "100px" }}
+      style={{ width: "6.25rem", height: "6.25rem" }}
     />
   );
 };
