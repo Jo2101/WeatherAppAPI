@@ -1,38 +1,58 @@
 //STYLES
 import "../styles/weatherCard.css";
-import "../styles/weatherInfo.css";
-import "../styles/weatherLocation.css";
-import "../styles/highLowTemperature.css";
+import "../styles/weatherDetails.css";
 
-//JSON
-import data from "../data/weather.json";
+//AXIOS
+import axios from "axios";
 
-//ICONS
-import MoonIcon from "./MoonIcon";
-import SunIcon from "./SunIcon";
+//STATES
+import React, { useState, useEffect } from "react";
+
+//COMPONENTS
+import WeatherDetails from "./WeatherDetails";
 
 const WeatherCard = () => {
-  const backgroundImage =
-    data.icon == "moonLogo"
-      ? data.backgroundImageNight
-      : data.backgroundImageDay;
+  const [weather, setWeather] = useState(null);
+  const [location, setLocation] = useState(null);
+  const apiKey = "D6VlGE0DGWpkcW7c3BGJLvFhV54APS81";
+  const locationQuery = "Frankfurt";
+
+  useEffect(() => {
+    const fetchLocation = () => {
+      fetch(
+        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${locationQuery}`
+      )
+        .then((response) => response.json())
+        .then((locationResponse) => {
+          const key = locationResponse[0].Key;
+          setLocation(key);
+        });
+    };
+
+    fetchLocation();
+  }, []);
+
+  useEffect(() => {
+    const fetchWeatherData = () => {
+      if (location) {
+        fetch(
+          `http://dataservice.accuweather.com/currentconditions/v1/${location}?apikey=${apiKey}`
+        )
+          .then((response) => response.json())
+          .then((weatherResponse) => {
+            setWeather(weatherResponse[0]);
+            console.log("Json", weatherResponse[0]);
+          });
+      }
+    };
+
+    fetchWeatherData();
+  }, [location]);
+
   return (
-    <div
-      className="weather-card"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <div>{data.icon == "moonLogo" ? <MoonIcon /> : <SunIcon />} </div>
-      <div className="weather-location">
-        <h2 className="location">{data.location}</h2>
-        <h3 className="temperature">{data.temperature}°</h3>
-      </div>
-      <div className="weather-info">
-        <h3 className="realFeel">Feels Like: {data.feels_like}°</h3>
-        <div className="highLowTemperature">
-          <p>H: {data.high}°</p>
-          <p>L:{data.low}°</p>
-        </div>
-      </div>
+    <div className="weather-card">
+      <h2 className="location">{locationQuery}</h2>
+      <WeatherDetails weather={weather} />
     </div>
   );
 };

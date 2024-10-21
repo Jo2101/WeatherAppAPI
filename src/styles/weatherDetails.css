@@ -1,0 +1,14 @@
+.location {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.temperature {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.condition {
+  font-size: 16px;
+  color: #666;
+}
