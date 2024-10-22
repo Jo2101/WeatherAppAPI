@@ -10,20 +10,11 @@
   margin: auto;
   width: 30rem;
   height: 40rem;
-  border: blue 1px solid;
+  border: rgb(235, 226, 226) 2px solid;
+  border-radius: 15%;
 }
 
 .location {
   font-size: 50px;
   font-weight: bold;
-}
-
-.temperature {
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-.condition {
-  font-size: 16px;
-  color: #666;
 }

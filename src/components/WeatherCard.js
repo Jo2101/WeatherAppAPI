@@ -2,25 +2,25 @@
 import "../styles/weatherCard.css";
 import "../styles/weatherDetails.css";
 
-//AXIOS
-import axios from "axios";
-
 //STATES
 import React, { useState, useEffect } from "react";
 
 //COMPONENTS
 import WeatherDetails from "./WeatherDetails";
+import Date from "./Date";
+import SearchButton from "./SearchButton";
 
 const WeatherCard = () => {
   const [weather, setWeather] = useState(null);
   const [location, setLocation] = useState(null);
-  const apiKey = "D6VlGE0DGWpkcW7c3BGJLvFhV54APS81";
-  const locationQuery = "Frankfurt";
+  const [newLocation, setNewLocation] = useState("Frankfurt");
+
+  const apiKey = "NaFG2bOKhLCQbPvWNsptFeq1qNsYfAWh";
 
   useEffect(() => {
     const fetchLocation = () => {
       fetch(
-        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${locationQuery}`
+        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${newLocation}`
       )
         .then((response) => response.json())
         .then((locationResponse) => {
@@ -30,13 +30,13 @@ const WeatherCard = () => {
     };
 
     fetchLocation();
-  }, []);
+  }, [newLocation]);
 
   useEffect(() => {
     const fetchWeatherData = () => {
       if (location) {
         fetch(
-          `http://dataservice.accuweather.com/currentconditions/v1/${location}?apikey=${apiKey}`
+          `http://dataservice.accuweather.com/currentconditions/v1/${location}?apikey=${apiKey}&details=true`
         )
           .then((response) => response.json())
           .then((weatherResponse) => {
@@ -49,10 +49,18 @@ const WeatherCard = () => {
     fetchWeatherData();
   }, [location]);
 
+  const handleCitySearch = (weatherUpdate, newCity) => {
+    setWeather(weatherUpdate);
+    setNewLocation(newCity);
+    setLocation(null);
+  };
+
   return (
     <div className="weather-card">
-      <h2 className="location">{locationQuery}</h2>
+      <Date />
+      <h2 className="location">{newLocation}</h2>
       <WeatherDetails weather={weather} />
+      <SearchButton onCitySearch={handleCitySearch} />
     </div>
   );
 };
