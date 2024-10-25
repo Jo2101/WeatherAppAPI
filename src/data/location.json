@@ -1,0 +1,214 @@
+[
+  {
+    "Version": 1,
+    "Key": "168720",
+    "Type": "City",
+    "Rank": 33,
+    "LocalizedName": "Frankfurt",
+    "EnglishName": "Frankfurt",
+    "PrimaryPostalCode": "60311",
+    "Region": {
+      "ID": "EUR",
+      "LocalizedName": "Europe",
+      "EnglishName": "Europe"
+    },
+    "Country": {
+      "ID": "DE",
+      "LocalizedName": "Germany",
+      "EnglishName": "Germany"
+    },
+    "AdministrativeArea": {
+      "ID": "HE",
+      "LocalizedName": "Hesse",
+      "EnglishName": "Hesse",
+      "Level": 1,
+      "LocalizedType": "State",
+      "EnglishType": "State",
+      "CountryID": "DE"
+    },
+    "TimeZone": {
+      "Code": "CEST",
+      "Name": "Europe/Berlin",
+      "GmtOffset": 2,
+      "IsDaylightSaving": true,
+      "NextOffsetChange": "2024-10-27T01:00:00Z"
+    },
+    "GeoPosition": {
+      "Latitude": 50.111,
+      "Longitude": 8.682,
+      "Elevation": {
+        "Metric": {
+          "Value": 112,
+          "Unit": "m",
+          "UnitType": 5
+        },
+        "Imperial": {
+          "Value": 367,
+          "Unit": "ft",
+          "UnitType": 0
+        }
+      }
+    },
+    "IsAlias": false,
+    "SupplementalAdminAreas": [
+      {
+        "Level": 2,
+        "LocalizedName": "Frankfurt am Main",
+        "EnglishName": "Frankfurt am Main"
+      }
+    ],
+    "DataSets": [
+      "AirQualityCurrentConditions",
+      "AirQualityForecasts",
+      "Alerts",
+      "DailyPollenForecast",
+      "ForecastConfidence",
+      "FutureRadar",
+      "MinuteCast",
+      "Radar"
+    ]
+  },
+  {
+    "Version": 1,
+    "Key": "167903",
+    "Type": "City",
+    "Rank": 53,
+    "LocalizedName": "Frankfurt",
+    "EnglishName": "Frankfurt",
+    "PrimaryPostalCode": "15230",
+    "Region": {
+      "ID": "EUR",
+      "LocalizedName": "Europe",
+      "EnglishName": "Europe"
+    },
+    "Country": {
+      "ID": "DE",
+      "LocalizedName": "Germany",
+      "EnglishName": "Germany"
+    },
+    "AdministrativeArea": {
+      "ID": "BB",
+      "LocalizedName": "Brandenburg",
+      "EnglishName": "Brandenburg",
+      "Level": 1,
+      "LocalizedType": "State",
+      "EnglishType": "State",
+      "CountryID": "DE"
+    },
+    "TimeZone": {
+      "Code": "CEST",
+      "Name": "Europe/Berlin",
+      "GmtOffset": 2,
+      "IsDaylightSaving": true,
+      "NextOffsetChange": "2024-10-27T01:00:00Z"
+    },
+    "GeoPosition": {
+      "Latitude": 52.344,
+      "Longitude": 14.535,
+      "Elevation": {
+        "Metric": {
+          "Value": 38,
+          "Unit": "m",
+          "UnitType": 5
+        },
+        "Imperial": {
+          "Value": 124,
+          "Unit": "ft",
+          "UnitType": 0
+        }
+      }
+    },
+    "IsAlias": false,
+    "SupplementalAdminAreas": [
+      {
+        "Level": 2,
+        "LocalizedName": "Frankfurt (Oder)",
+        "EnglishName": "Frankfurt (Oder)"
+      }
+    ],
+    "DataSets": [
+      "AirQualityCurrentConditions",
+      "AirQualityForecasts",
+      "Alerts",
+      "DailyPollenForecast",
+      "ForecastConfidence",
+      "FutureRadar",
+      "MinuteCast",
+      "Radar"
+    ]
+  },
+  {
+    "Version": 1,
+    "Key": "1026131",
+    "Type": "City",
+    "Rank": 85,
+    "LocalizedName": "Frankfurt",
+    "EnglishName": "Frankfurt",
+    "PrimaryPostalCode": "91480",
+    "Region": {
+      "ID": "EUR",
+      "LocalizedName": "Europe",
+      "EnglishName": "Europe"
+    },
+    "Country": {
+      "ID": "DE",
+      "LocalizedName": "Germany",
+      "EnglishName": "Germany"
+    },
+    "AdministrativeArea": {
+      "ID": "BY",
+      "LocalizedName": "Bavaria",
+      "EnglishName": "Bavaria",
+      "Level": 1,
+      "LocalizedType": "State",
+      "EnglishType": "State",
+      "CountryID": "DE"
+    },
+    "TimeZone": {
+      "Code": "CEST",
+      "Name": "Europe/Berlin",
+      "GmtOffset": 2,
+      "IsDaylightSaving": true,
+      "NextOffsetChange": "2024-10-27T01:00:00Z"
+    },
+    "GeoPosition": {
+      "Latitude": 49.68,
+      "Longitude": 10.527,
+      "Elevation": {
+        "Metric": {
+          "Value": 356,
+          "Unit": "m",
+          "UnitType": 5
+        },
+        "Imperial": {
+          "Value": 1167,
+          "Unit": "ft",
+          "UnitType": 0
+        }
+      }
+    },
+    "IsAlias": false,
+    "SupplementalAdminAreas": [
+      {
+        "Level": 2,
+        "LocalizedName": "Neustadt a.d. Aisch-Bad Windsheim",
+        "EnglishName": "Neustadt a.d. Aisch-Bad Windsheim"
+      },
+      {
+        "Level": 3,
+        "LocalizedName": "Markt Taschendorf",
+        "EnglishName": "Markt Taschendorf"
+      }
+    ],
+    "DataSets": [
+      "AirQualityCurrentConditions",
+      "AirQualityForecasts",
+      "Alerts",
+      "DailyPollenForecast",
+      "ForecastConfidence",
+      "FutureRadar",
+      "MinuteCast",
+      "Radar"
+    ]
+  }
+]

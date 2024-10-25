@@ -2,7 +2,7 @@ import "../styles/weatherDetails.css";
 
 const WeatherDetails = ({ weather }) => {
   if (!weather) {
-    return <p>Loading..</p>;
+    return <p></p>;
   }
   const icon = String(weather.WeatherIcon).padStart(2, "0");
   return (

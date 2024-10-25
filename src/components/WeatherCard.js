@@ -11,16 +11,16 @@ import Date from "./Date";
 import SearchButton from "./SearchButton";
 
 const WeatherCard = () => {
-  const [weather, setWeather] = useState(null);
-  const [location, setLocation] = useState(null);
+  const [weather, setWeather] = useState("");
+  const [location, setLocation] = useState("");
   const [newLocation, setNewLocation] = useState("Frankfurt");
 
-  const apiKey = "NaFG2bOKhLCQbPvWNsptFeq1qNsYfAWh";
+  const apiKey = "D6VlGE0DGWpkcW7c3BGJLvFhV54APS81";
 
   useEffect(() => {
     const fetchLocation = () => {
       fetch(
-        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${newLocation}`
+        `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${newLocation}`
       )
         .then((response) => response.json())
         .then((locationResponse) => {
@@ -36,7 +36,7 @@ const WeatherCard = () => {
     const fetchWeatherData = () => {
       if (location) {
         fetch(
-          `http://dataservice.accuweather.com/currentconditions/v1/${location}?apikey=${apiKey}&details=true`
+          `https://dataservice.accuweather.com/currentconditions/v1/${location}?apikey=${apiKey}&details=true`
         )
           .then((response) => response.json())
           .then((weatherResponse) => {

@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import "../styles/searchButton.css";
 
 const SearchButton = ({ onCitySearch }) => {
-  const [citySearch, setCitySearch] = useState(null);
-  const [location, setlocation] = useState(null);
-  const apiKey = "NaFG2bOKhLCQbPvWNsptFeq1qNsYfAWh";
+  const [citySearch, setCitySearch] = useState("");
+  const [location, setlocation] = useState("");
+  const apiKey = "D6VlGE0DGWpkcW7c3BGJLvFhV54APS81";
 
   useEffect(() => {
     const fetchCities = () => {
       fetch(
-        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${citySearch}`
+        `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${citySearch}`
       )
         .then((response) => response.json())
         .then((cityResponse) => {
@@ -26,7 +26,7 @@ const SearchButton = ({ onCitySearch }) => {
   const fetchWeatherCity = () => {
     if (location) {
       fetch(
-        `http://dataservice.accuweather.com/currentconditions/v1/${location}?apikey=${apiKey}&details=true`
+        `https://dataservice.accuweather.com/currentconditions/v1/${location}?apikey=${apiKey}&details=true`
       )
         .then((response) => response.json())
         .then((weatherResponse) => {
